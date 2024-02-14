@@ -69,8 +69,8 @@
             <div class="container flex justify-between">
                 <div
                     class="bg-[#894189] rounded-[40px] text-2xl px-6 py-4 text-white flex gap-2 items-center justify-center">
-                    <span>Life:</span><span id="life">5</span><span><img src="./images/heart.svg" alt=""></span>
-                    <span>1</span>
+                    <span>Life:</span><span><img src="./images/heart.svg" alt=""></span>
+                    <span id="your-life">5</span>
                 </div>
                 <div
                     class="bg-[#360490] rounded-[40px] text-2xl px-6 py-4 text-white flex gap-2 items-center justify-center">
@@ -86,9 +86,10 @@
             <!-- live score -->
             <div
                 class="space-y-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center flex-col p-10 rounded-2xl text-white">
-                <h1><span class="font-bold text-2xl">Score: <span id="final-score"></span> </span>
+                <h1><span class="font-black text-2xl">Score: <span id="final-score">0</span> </span>
                 </h1>
                 <button class="btn" onclick="againPlay()">Play Again</button>
+                <button onclick="home()" class="btn">Home</button>
                 <p>Practice will make you pro</p>
             </div>
         </section>

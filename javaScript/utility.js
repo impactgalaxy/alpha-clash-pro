@@ -9,12 +9,20 @@ function showElementById(id) {
 function generateBackground(id) {
     const findElement = document.getElementById(id);
     findElement.classList.add("bg-orange-400");
-
+}
+function removeBackground(id) {
+    const findElement = document.getElementById(id);
+    findElement.classList.remove("bg-orange-400");
 }
 
 function generateAlphabet() {
     const alphabetString = "abcdefghijklmnopqrstuvwxyz";
     const alphabets = alphabetString.split("");
-    const random = Math.floor(Math.random() * (alphabetString.length - 0) + 0);
+    const random = Math.round(Math.random() * 25);
     return alphabets[random];
+}
+function getKeyId(id) {
+    const findElement = document.getElementById(id);
+    const elementId = findElement.innerText;
+    return elementId;
 }
