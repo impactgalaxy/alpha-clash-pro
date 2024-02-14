@@ -1,5 +1,3 @@
-// const intro = document.getElementById("intro");
-// const playground = document.getElementById("play-ground");
 const finalScore = document.getElementById("final-score");
 const output = document.getElementById("output");
 const yourScore = document.getElementById("your-score");
@@ -38,11 +36,7 @@ function gameOver(r) {
     showElementById("final-section");
     hideElementById("play-ground");
     removeBackground(r);
-
 }
-
-//setInterval(gamingLoop, 2000);
-//setInterval(gamingLoop, 1000);
 function gamingLoop() {
     const alphabet = generateAlphabet();
     output.innerText = alphabet;
@@ -55,16 +49,14 @@ function play() {
     showElementById("play-ground");
     hideElementById("final-section");
     gamingLoop();
-}
-function againPlay() {
-    play();
-    //showElementById("play-ground");
-    //hideElementById("final-score");
     score = 0;
     yourScore.innerText = score;
     life = 5;
     YourLife.innerText = life;
-    //console.log(location.reload())
+
+}
+function againPlay() {
+    play();
 }
 function home() {
     location.reload();

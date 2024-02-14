@@ -21,8 +21,3 @@ function generateAlphabet() {
     const random = Math.round(Math.random() * 25);
     return alphabets[random];
 }
-function getKeyId(id) {
-    const findElement = document.getElementById(id);
-    const elementId = findElement.innerText;
-    return elementId;
-}
