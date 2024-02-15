@@ -5,16 +5,13 @@ const YourLife = document.getElementById("your-life");
 let score = 0;
 let life = 5;
 
-// KeyboardEvent
-
 if (window.innerWidth < 600) {
     function mobileView(event) {
         const userKey = event.target.value.toLowerCase();
-        console.log(userKey, "by input");
         const displayKey = document.getElementById("output").innerText.toLowerCase();
 
         if (userKey === displayKey) {
-            //console.log("You got a point");
+
             gamingLoop();
             removeBackground(displayKey);
             score += 1;
@@ -58,16 +55,12 @@ if (window.innerWidth < 600) {
         }
     }
 }
-
 window.addEventListener("keyup", handleKeyUp);
 const inputForMobile = document.getElementById("inputForMobile");
 inputForMobile.addEventListener("keyup", mobileView);
 inputForMobile.addEventListener("keyup", function (event) {
     event.target.value = "";
 });
-
-
-
 function gameOver(r) {
     showElementById("final-section");
     hideElementById("play-ground");
@@ -77,9 +70,7 @@ function gamingLoop() {
     const alphabet = generateAlphabet();
     output.innerText = alphabet;
     generateBackground(alphabet);
-
 }
-
 function play() {
     hideElementById("intro");
     showElementById("play-ground");
@@ -99,3 +90,19 @@ function againPlay() {
 function home() {
     location.reload();
 }
+
+document.body.addEventListener("keypress", (event) => {
+    const intro = document.getElementById("intro");
+    const f_section = document.getElementById("final-section")
+    if (event.key === "Enter" && !intro.classList.contains("hidden")) {
+        play();
+        life = 6;
+    };
+})
+document.body.addEventListener("keypress", (event) => {
+    const f_section = document.getElementById("final-section")
+    if (event.key === "Enter" && !f_section.classList.contains("hidden")) {
+        againPlay();
+        life = 6;
+    };
+})
