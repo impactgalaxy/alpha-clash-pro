@@ -32,7 +32,7 @@ let life = 5;
 // }
 
 function mobileView(event) {
-    const userKey = event.target.value;
+    const userKey = event.target.value.toLowerCase();
     console.log(userKey, "by input");
     const displayKey = document.getElementById("output").innerText.toLowerCase();
 
@@ -93,14 +93,4 @@ function againPlay() {
 }
 function home() {
     location.reload();
-}
-
-
-console.log(window.innerWidth);
-if (window.innerWidth < 600) {
-
-
-}
-else {
-
 }

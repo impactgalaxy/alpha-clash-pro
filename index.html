@@ -15,23 +15,23 @@
             <!-- intro -->
             <div class="flex flex-col items-center gap-4">
                 <h1 class="text-3xl md:text-5xl lg:text-8xl uppercase text-white font-black">Alphabet Clash</h1>
-                <p class="capitalize text-white text-2xl">Unleash your keyboard kung fu: press "Enter" to play</p>
+                <p class="capitalize text-white lg:text-2xl">Unleash your keyboard kung fu: press "Enter" to play</p>
                 <button onclick="play()" class="btn bg-white text-black text-xl hover:bg-slate-300">Play Now</button>
             </div>
         </section>
         <section class="flex flex-col items-center gap-5  h-screen pt-5 hidden" id="play-ground">
             <!-- playground -->
             <div
-                class="flex items-center justify-center container h-80 border-[20px] rounded-2xl border-[#464647cc] bg-[#FFFFFFB3] relative">
+                class="flex items-center justify-center container h-40 lg:h-80 border-[20px] rounded-2xl border-[#464647cc] bg-[#FFFFFFB3] relative">
                 <p
-                    class="lg:text-2xl absolute -top-5 left-2/4 -translate-x-1/2 bg-black text-white pb-3 rounded-b-xl px-2">
+                    class="hidden lg:block md:block lg:text-2xl absolute -top-5 left-2/4 -translate-x-1/2 bg-black text-white lg:pb-3 rounded-b-xl px-2">
                     Don't watch
                     keyboard while typing...</p>
-                <h1 class="text-black text-9xl font-black uppercase" id="output">Y</h1>
+                <h1 class="text-black text-4xl lg:text-9xl font-black uppercase" id="output">Y</h1>
 
             </div>
             <div>
-                <div class="flex justify-center gap-1 my-1 w-full *:text-2xl *:text-black *:cursor-pointer">
+                <div class="flex justify-center gap-1 my-1 w-full lg:*:text-2xl *:text-black *:cursor-pointer">
                     <kbd id="q" class="kbd">q</kbd>
                     <kbd id="w" class="kbd">w</kbd>
                     <kbd id="e" class="kbd">e</kbd>
@@ -44,7 +44,7 @@
                     <kbd id="p" class="kbd">p</kbd>
                 </div>
                 <input type="text" id="inputForMobile" class="w-2 block m-auto h-2">
-                <div class="flex justify-center gap-1 my-1 w-full *:text-2xl  *:text-black *:cursor-pointer">
+                <div class="flex justify-center gap-1 my-1 w-full lg:*:text-2xl  *:text-black *:cursor-pointer">
                     <kbd id="a" class="kbd">a</kbd>
                     <kbd id="s" class="kbd">s</kbd>
                     <kbd id="d" class="kbd">d</kbd>
@@ -55,7 +55,7 @@
                     <kbd id="k" class="kbd">k</kbd>
                     <kbd id="l" class="kbd">l</kbd>
                 </div>
-                <div class="flex justify-center gap-1 my-1 w-full *:text-2xl *:text-black *:cursor-pointer">
+                <div class="flex justify-center gap-1 my-1 w-full lg:*:text-2xl *:text-black *:cursor-pointer">
                     <kbd id="z" class="kbd">z</kbd>
                     <kbd id="x" class="kbd">x</kbd>
                     <kbd id="c" class="kbd">c</kbd>
