@@ -29,7 +29,9 @@ function handleKeyUp(event) {
     }
 }
 
-document.addEventListener("keyup", handleKeyUp);
+window.addEventListener("keyup", handleKeyUp);
+const inputForMobile = document.getElementById("inputForMobile");
+inputForMobile.addEventListener("keyup", mobileView);
 
 
 function gameOver(r) {
@@ -60,4 +62,28 @@ function againPlay() {
 }
 function home() {
     location.reload();
+}
+function mobileView(event) {
+    const userKey = event.key;
+    const displayKey = document.getElementById("output").innerText.toLowerCase();
+
+    if (userKey === displayKey) {
+        console.log("You got a point");
+        gamingLoop();
+        removeBackground(displayKey);
+        score += 1;
+        yourScore.innerText = score;
+        finalScore.innerText = score;
+    }
+    else {
+        life -= 1;
+        if (life === 0) {
+            gameOver(displayKey);
+        }
+        YourLife.innerText = life;
+    }
+    if (userKey === "Escape") {
+        gameOver();
+    }
+
 }
