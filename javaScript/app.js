@@ -6,57 +6,60 @@ let score = 0;
 let life = 5;
 
 // KeyboardEvent
-// function handleKeyUp(event) {
-//     const userKey = event.key;
-//     console.log(userKey, "by keyboard");
-//     const displayKey = document.getElementById("output").innerText.toLowerCase();
 
-//     if (userKey === displayKey) {
-//         console.log("You got a point");
-//         gamingLoop();
-//         removeBackground(displayKey);
-//         score += 1;
-//         yourScore.innerText = score;
-//         finalScore.innerText = score;
-//     }
-//     else {
-//         life -= 1;
-//         if (life === 0) {
-//             gameOver(displayKey);
-//         }
-//         YourLife.innerText = life;
-//     }
-//     if (userKey === "Escape") {
-//         gameOver();
-//     }
-// }
+if (window.innerWidth < 600) {
+    function mobileView(event) {
+        const userKey = event.target.value.toLowerCase();
+        console.log(userKey, "by input");
+        const displayKey = document.getElementById("output").innerText.toLowerCase();
 
-function mobileView(event) {
-    const userKey = event.target.value.toLowerCase();
-    console.log(userKey, "by input");
-    const displayKey = document.getElementById("output").innerText.toLowerCase();
-
-    if (userKey === displayKey) {
-        //console.log("You got a point");
-        gamingLoop();
-        removeBackground(displayKey);
-        score += 1;
-        yourScore.innerText = score;
-        finalScore.innerText = score;
-    }
-    else {
-        life -= 1;
-        if (life === 0) {
-            gameOver(displayKey);
+        if (userKey === displayKey) {
+            //console.log("You got a point");
+            gamingLoop();
+            removeBackground(displayKey);
+            score += 1;
+            yourScore.innerText = score;
+            finalScore.innerText = score;
         }
-        YourLife.innerText = life;
-    }
-    if (userKey === "Escape") {
-        gameOver();
-    }
+        else {
+            life -= 1;
+            if (life === 0) {
+                gameOver(displayKey);
+            }
+            YourLife.innerText = life;
+        }
+        if (userKey === "Escape") {
+            gameOver();
+        }
 
+    }
+} else {
+    function handleKeyUp(event) {
+        const userKey = event.key.toLowerCase();
+
+        const displayKey = document.getElementById("output").innerText.toLowerCase();
+
+        if (userKey === displayKey) {
+            gamingLoop();
+            removeBackground(displayKey);
+            score += 1;
+            yourScore.innerText = score;
+            finalScore.innerText = score;
+        }
+        else {
+            life -= 1;
+            if (life === 0) {
+                gameOver(displayKey);
+            }
+            YourLife.innerText = life;
+        }
+        if (userKey === "Escape") {
+            gameOver();
+        }
+    }
 }
-//window.addEventListener("keyup", handleKeyUp);
+
+window.addEventListener("keyup", handleKeyUp);
 const inputForMobile = document.getElementById("inputForMobile");
 inputForMobile.addEventListener("keyup", mobileView);
 inputForMobile.addEventListener("keyup", function (event) {
@@ -86,6 +89,8 @@ function play() {
     yourScore.innerText = score;
     life = 5;
     YourLife.innerText = life;
+    inputForMobile.focus();
+
 
 }
 function againPlay() {
