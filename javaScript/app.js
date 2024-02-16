@@ -55,7 +55,7 @@ if (window.innerWidth < 600) {
         }
     }
 }
-window.addEventListener("keyup", handleKeyUp);
+document.addEventListener("keyup", handleKeyUp);
 const inputForMobile = document.getElementById("inputForMobile");
 inputForMobile.addEventListener("keyup", mobileView);
 inputForMobile.addEventListener("keyup", function (event) {
@@ -91,7 +91,7 @@ function home() {
     location.reload();
 }
 
-document.body.addEventListener("keypress", (event) => {
+window.document.addEventListener("keypress", (event) => {
     const intro = document.getElementById("intro");
     const f_section = document.getElementById("final-section")
     if (event.key === "Enter" && !intro.classList.contains("hidden")) {
@@ -99,7 +99,7 @@ document.body.addEventListener("keypress", (event) => {
         life = 6;
     };
 })
-document.body.addEventListener("keypress", (event) => {
+window.document.addEventListener("keypress", (event) => {
     const f_section = document.getElementById("final-section")
     if (event.key === "Enter" && !f_section.classList.contains("hidden")) {
         againPlay();
